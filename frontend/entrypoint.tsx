@@ -3,8 +3,8 @@
  */
 
   const petName = "Jakob";
-  const hunger = 80;
   const happiness = 85;
+  const hunger = 80;
   const energy = 60;
 
   const isHappy = happiness > 70;
