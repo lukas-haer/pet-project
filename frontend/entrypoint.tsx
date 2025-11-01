@@ -2,18 +2,18 @@
  * Digital Pet Page - Tutorial 2: Reactivity
  */
 
-  const petName = "Jakob";
-  const happiness = 85;
-  const hunger = 80;
-  const energy = 60;
+const petName = "Jakob";
+const happiness = 85;
+const hunger = 80;
+const energy = 60;
 
-  const isHappy = happiness > 70;
+const isHappy = happiness > 70;
 
-  const stats = [
-    { name: 'Happiness', emoji: '😊', value: happiness },
-    { name: 'Hunger', emoji: '🍎', value: hunger },
-    { name: 'Energy', emoji: '⚡', value: energy }
-  ];
+const stats = [
+  { name: 'Happiness', emoji: '😊', value: happiness },
+  { name: 'Hunger', emoji: '🍎', value: hunger },
+  { name: 'Energy', emoji: '⚡', value: energy }
+];
   
 export default (
 
