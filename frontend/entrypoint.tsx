@@ -2,19 +2,16 @@
  * Digital Pet Page - Tutorial 2: Reactivity
  */
 
-  // Data for demonstration
   const petName = "Jakob";
   const hunger = 80;
   const happiness = 85;
   const energy = 60;
 
-  // Booleans for conditionals
   const isHappy = happiness > 70;
 
-  // Arrays for .map()
   const stats = [
-    { name: 'Hunger', emoji: '🍎', value: hunger },
     { name: 'Happiness', emoji: '😊', value: happiness },
+    { name: 'Hunger', emoji: '🍎', value: hunger },
     { name: 'Energy', emoji: '⚡', value: energy }
   ];
   
