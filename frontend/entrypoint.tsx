@@ -33,7 +33,8 @@ export default (
       </div>   
 
       <h2> {petName}'s mood is: 
-        {always(() => {if (happyLevel.val > 80) return '😄';
+        {always(() => {
+          if (happyLevel.val > 80) return '😄';
           else if (happyLevel.val > 50) return '😐';
           else if (happyLevel.val > 20) return '😞';
           else return '💀';
