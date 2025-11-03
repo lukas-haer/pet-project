@@ -1,3 +1,5 @@
+import { type Profile } from "common/types/profile.ts";
+
 export const profile = $({
     name: "Adrian",
     age: 45,
@@ -8,7 +10,7 @@ export const profile = $({
     state: "CA",
     zip: "12345",
     country: "USA",
-})
+} satisfies Profile);
 
 export function changeName(newName: string) {
     profile.name = newName;

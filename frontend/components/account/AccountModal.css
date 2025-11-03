@@ -1,0 +1,213 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+}
+
+/* Profile modal */
+.profile-modal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  color: #333;
+}
+
+.profile-modal h2 {
+  margin: 0 0 20px 0;
+  font-size: 2em;
+  color: #764ba2;
+  text-shadow: none;
+}
+
+.change-name-btn {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 25px;
+  background: rgba(118, 75, 162, 0.1);
+  border: 2px solid rgba(118, 75, 162, 0.3);
+  border-radius: 12px;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: #764ba2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-name-btn:hover {
+  background: rgba(118, 75, 162, 0.2);
+  border-color: rgba(118, 75, 162, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(118, 75, 162, 0.1);
+  border: 2px solid rgba(118, 75, 162, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  color: #764ba2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  padding: 0;
+}
+
+.close-button:hover {
+  background: rgba(118, 75, 162, 0.2);
+  transform: rotate(90deg);
+  border-color: rgba(118, 75, 162, 0.5);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: rgba(118, 75, 162, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(118, 75, 162, 0.15);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: rgba(118, 75, 162, 0.12);
+  transform: translateX(5px);
+  border-color: rgba(118, 75, 162, 0.25);
+}
+
+.info-label {
+  font-weight: 600;
+  font-size: 1.05em;
+  color: #555;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #764ba2;
+  text-align: right;
+}
+
+.info-section {
+  margin-top: 10px;
+  padding: 20px;
+  background: rgba(118, 75, 162, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(118, 75, 162, 0.15);
+}
+
+.info-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.3em;
+  text-align: left;
+  color: #764ba2;
+  text-shadow: none;
+}
+
+.address-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.address-details p {
+  margin: 0;
+  padding: 10px 14px;
+  background: rgba(118, 75, 162, 0.08);
+  border-radius: 8px;
+  font-size: 0.95em;
+  color: #555;
+  border: 1px solid rgba(118, 75, 162, 0.1);
+}
+
+/* Action buttons container */
+.actions {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.actions button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.actions button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.actions button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+
+	.actions button {
+    padding: 12px 20px;
+    font-size: 1.1em;
+  }
+
+  .profile-modal {
+    padding: 30px 20px;
+    max-height: 90vh;
+  }
+
+  .profile-modal h2 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .account-button {
+    padding: 10px 16px;
+    font-size: 1em;
+  }
+}
