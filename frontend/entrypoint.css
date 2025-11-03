@@ -337,6 +337,12 @@ h3 {
   );
 }
 
+@media (max-width: 600px) {
+  .stat-container {
+    width: 95%;
+  }
+}
+
 /* Warning message */
 .warning {
   color: #ffd93d;
@@ -415,10 +421,6 @@ h3 {
   .actions button {
     padding: 12px 20px;
     font-size: 1.1em;
-  }
-
-  .stat-container {
-    width: 95%;
   }
 
   .profile-modal {
