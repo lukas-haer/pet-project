@@ -6,13 +6,13 @@ import { Pet } from "common/types/profile.ts";
 
 
 type PetPageProps = {
-  name: string
+  pet: Pet
 };
 
 const showProfile = $(false);
 
-@template(function () {
-
+@template(function ({pet}) {
+    
   return (
     <main>
       <h1> 🐶 Digital Pet Companion </h1>
@@ -25,12 +25,12 @@ const showProfile = $(false);
       {showProfile.val && <AccountModal profile={profile} closeModal={() => showProfile.val = false} />}
 
       <div class="actions">
-        <button type="button" onclick={() => this.pet.happiness = Math.min(100, this.pet.happiness + 15)}> Play </button>
-        <button type="button" onclick={() => this.pet.hunger = Math.min(100, this.pet.hunger + 15)}> Feed </button>
-        <button type="button" onclick={() => this.pet.energy = Math.min(100, this.pet.energy + 15)}> Rest </button>
+        <button type="button" onclick={() => pet.happiness = Math.min(100, pet.happiness + 15)}> Play </button>
+        <button type="button" onclick={() => pet.hunger = Math.min(100, pet.hunger + 15)}> Feed </button>
+        <button type="button" onclick={() => pet.energy = Math.min(100, pet.energy + 15)}> Rest </button>
       </div>   
 
-      <h2> {this.pet.name}"s mood is: 
+      <h2> {pet.name}"s mood is: 
         {always(() => {
           if (this.happyLevel.val > 80) return "😄";
           else if (this.happyLevel.val > 50) return "😐";
@@ -41,24 +41,13 @@ const showProfile = $(false);
 
       <h3> Pet Stats: </h3>
 
-      <StatusBar name="Happiness" emoji="😊" value={this.pet.happiness} />
-      <StatusBar name="Hunger" emoji="🍎" value={this.pet.hunger} />
-      <StatusBar name="Energy" emoji="⚡" value={this.pet.energy} />
+      <StatusBar name="Happiness" emoji="😊" value={pet.happiness} />
+      <StatusBar name="Hunger" emoji="🍎" value={pet.hunger} />
+      <StatusBar name="Energy" emoji="⚡" value={pet.energy} />
 
     </main>
 )})
 
 export class PetPage extends Component<PetPageProps> {
-  pet!: Pet;
-  happyLevel!: Ref<number>;
-
-  protected override onCreate() {
-    const pet = profile.pets.find((pet) => pet.name == this.properties.name)
-    if (typeof pet === "undefined") {
-        redirect("/");
-        return;
-    }
-    this.pet = pet;
-    this.happyLevel = always(() => (this.pet.hunger + this.pet.happiness + this.pet.energy) / 3);
-  }
+  happyLevel = always(() => (this.properties.pet.hunger + this.properties.pet.happiness + this.properties.pet.energy) / 3);
 }
