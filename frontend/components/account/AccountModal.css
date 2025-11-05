@@ -153,48 +153,8 @@
   border: 1px solid rgba(118, 75, 162, 0.1);
 }
 
-/* Action buttons container */
-.actions {
-  display: flex;
-  gap: 15px;
-  margin: 20px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.actions button {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 15px;
-  padding: 15px 25px;
-  font-size: 1.2em;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.actions button:hover {
-  background: rgba(255, 255, 255, 0.35);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.actions button:active {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
-
 /* Responsive design */
 @media (max-width: 600px) {
-
-	.actions button {
-    padding: 12px 20px;
-    font-size: 1.1em;
-  }
 
   .profile-modal {
     padding: 30px 20px;
