@@ -1,6 +1,6 @@
 import { Component, template } from "uix/components/Component.ts";
 import { profile } from "backend/profile.ts";
-import { StatusBar } from "frontend/components/status-bar/StatusBar.tsx";
+import { StatusBar } from "frontend/components/StatusBar.tsx";
 import { AccountModal } from "frontend/components/account/AccountModal.tsx";
 import { Pet } from "common/types/profile.ts";
 

@@ -7,7 +7,7 @@ const pets = $([
         hunger: 70,
         energy: 70
     }
-] satisfies Array<Pet> )
+] satisfies Array<Pet>)
 
 setInterval(() => {
     pets.forEach((pet) => {
