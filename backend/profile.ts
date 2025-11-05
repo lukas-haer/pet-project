@@ -9,14 +9,6 @@ const pets = $([
     }
 ] satisfies Array<Pet>)
 
-setInterval(() => {
-    pets.forEach((pet) => {
-        pet.happiness = Math.max(0, pet.happiness - 2);
-        pet.hunger = Math.max(0, pet.hunger - 2);
-        pet.energy = Math.max(0, pet.energy - 2);
-    })
-}, 2000);
-
 export const profile = $({
     name: "Adrian",
     age: 45,
@@ -33,3 +25,11 @@ export const profile = $({
 export function changeName(newName: string) {
     profile.name = newName;
 }
+
+setInterval(() => {
+    pets.forEach((pet) => {
+        pet.happiness = Math.max(0, pet.happiness - 2);
+        pet.hunger = Math.max(0, pet.hunger - 2);
+        pet.energy = Math.max(0, pet.energy - 2);
+    })
+}, 2000);
