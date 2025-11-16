@@ -9,20 +9,20 @@ type PetPageProps = {
   pet: Pet
 };
 
-const showProfile = $(false);
-
 @template(function ({pet}) {
+
+  const happyLevel = always(() => (pet.hunger + pet.happiness + pet.energy) / 3);
     
   return (
     <main>
       <h1> 🐶 Digital Pet Companion </h1>
       <h2> {profile.name}'s Pet </h2>
 
-      <button type="button" class="account-button" onclick={() => showProfile.val = !showProfile.val}>
+      <button type="button" class="account-button" onclick={() => this.profileModalOpen.val = !this.profileModalOpen.val}>
         👤 Account
       </button>
 
-      {showProfile.val && <AccountModal profile={profile} closeModal={() => showProfile.val = false} />}
+      {this.profileModalOpen.val && <AccountModal profile={profile} closeModal={() => this.profileModalOpen.val = false} />}
 
       <div class="actions">
         <button type="button" onclick={() => pet.happiness = Math.min(100, pet.happiness + 15)}> Play </button>
@@ -32,9 +32,9 @@ const showProfile = $(false);
 
       <h2> {pet.name}"s mood is: 
         {always(() => {
-          if (this.happyLevel.val > 80) return "😄";
-          else if (this.happyLevel.val > 50) return "😐";
-          else if (this.happyLevel.val > 20) return "😞";
+          if (happyLevel.val > 80) return "😄";
+          else if (happyLevel.val > 50) return "😐";
+          else if (happyLevel.val > 20) return "😞";
           else return "💀";
         })}
       </h2>
@@ -49,5 +49,5 @@ const showProfile = $(false);
 )})
 
 export class PetPage extends Component<PetPageProps> {
-  happyLevel = always(() => (this.properties.pet.hunger + this.properties.pet.happiness + this.properties.pet.energy) / 3);
+  profileModalOpen = $(false);
 }
