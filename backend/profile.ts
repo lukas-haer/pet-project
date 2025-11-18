@@ -6,6 +6,12 @@ const pets = $([
         happiness: 70,
         hunger: 70,
         energy: 70
+    },
+    {
+        name: "Loris",
+        happiness: 70,
+        hunger: 70,
+        energy: 70
     }
 ] satisfies Array<Pet>)
 

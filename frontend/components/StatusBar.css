@@ -64,6 +64,6 @@
 
 @media (max-width: 600px) {
   .stat-container {
-    width: 95%;
+    width: 95vw;
   }
 }
