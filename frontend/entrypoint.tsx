@@ -1,5 +1,5 @@
 /**
- * Digital Pet Page - Tutorial 4: Components
+ * Digital Pet Page - Tutorial 5: Routing
 */
 
 import { profile } from "backend/profile.ts";
