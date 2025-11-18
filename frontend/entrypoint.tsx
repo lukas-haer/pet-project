@@ -1,5 +1,5 @@
 /**
- * Digital Pet Page - Tutorial 4: Components
+ * Digital Pet Page
 */
 
 import { Entrypoint } from "uix/providers/entrypoints.ts";
