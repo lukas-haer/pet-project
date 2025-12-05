@@ -1,4 +1,6 @@
-import { Pet, type Profile } from "common/types/profile.ts";
+import { type Profile } from "common/types/profile.ts";
+import { type Pet } from "common/types/pet.ts";
+import { StorageMap } from "datex-core-legacy/datex_all.ts";
 
 const pets = $([
     {
@@ -15,7 +17,7 @@ const pets = $([
     }
 ] satisfies Array<Pet>)
 
-export const profile = $({
+export const profile = eternal ?? $({
     name: "Adrian",
     age: 45,
     email: "adrian@gmail.com",
@@ -25,8 +27,8 @@ export const profile = $({
     state: "CA",
     zip: "12345",
     country: "USA",
-    pets: pets
 } satisfies Profile);
+
 
 export function changeName(newName: string) {
     profile.name = newName;

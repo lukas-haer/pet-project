@@ -2,7 +2,7 @@ import { Component, template } from "uix/components/Component.ts";
 import { profile } from "backend/profile.ts";
 import { StatusBar } from "frontend/components/StatusBar.tsx";
 import { AccountModal } from "frontend/components/account/AccountModal.tsx";
-import { Pet } from "common/types/profile.ts";
+import { type Pet } from "common/types/pet.ts";
 
 
 type PetPageProps = {
